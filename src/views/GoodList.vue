@@ -8,6 +8,8 @@
       <div>
         <router-view></router-view>
       </div>
+      <router-link to="/cart">显示购物车页面</router-link>
+      <button @click="jump">跳转到购物车页面</button>
     </div>
 </template>
 <style>
@@ -20,6 +22,12 @@
                 msg: "hello vue"
             }
         },
-
+        methods:{
+            jump(){
+//                this.$router.push("/cart");
+//                this.$router.push({path:'/cart'});
+              this.$router.push({path:'/cart?goodsId=123'});
+            }
+        }
     }
 </script>
