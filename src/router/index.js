@@ -13,22 +13,22 @@ export default new Router({
     {
       path: '/goods',
       name: 'GoodList',
-      component: GoodList,
-      children:[
-        {
-          path:'title',
-          name:'title',
-          component:Title
-        },
-        {
-          path:'image',
-          name:'image',
-          component:Image
-        }
-      ]
+      component: GoodList
+      // children:[
+      //   {
+      //     path:'title',
+      //     name:'title',
+      //     component:Title
+      //   },
+      //   {
+      //     path:'image',
+      //     name:'image',
+      //     component:Image
+      //   }
+      // ]
     },
     {
-      path:'/cart',
+      path:'/cart/:cartId',
       name:'cart',
       component:Cart
     }
