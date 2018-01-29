@@ -10,9 +10,12 @@
 <body>
   <div id="app" class="container">
     <h1>vue-resource插件 讲解</h1>
-    <a href="javacript:;" class="btn btn-primary">get请求</a>
-    <a href="javacript:;" class="btn btn-primary">post请求</a>
-    <a href="javacript:;" class="btn btn-primary">jsonp请求</a>
+    <a href="javacript:;" class="btn btn-primary" @click="get">get请求</a>
+    <a href="javacript:;" class="btn btn-primary" v-on:click="post">post请求</a>
+    <a href="javacript:;" class="btn btn-primary" @click="jsonp">jsonp请求</a>
+    <div>
+      <span>{{msg}}</span>
+    </div>
   </div>
 <script >
   new Vue({
@@ -22,7 +25,7 @@
     },
     methods:{
         get:function () {
-          this.$http.get("package",{
+          this.$http.get("package.json",{
               params:{
                   userId:"101"
               },
@@ -31,7 +34,25 @@
               }
           }).then(res=>{
               this.msg = res.data;
+          },error=>{
+              this.msg = error;
+          });
+        },
+        post:function () {
+          this.$http.post("package.json",{
+              userId:'102'
+          },{
+              headers:{
+                  access_tocken:"abc"
+              }
+          }).then(function (res) {
+            this.msg = res.data;
           })
+        },
+        jsonp:function () {
+          this.$http.jsonp("http://www.imooc.com/course/AjaxCourseMembers?ids=796").then(res=>{
+              this.msg=res.data;
+          });
         }
     }
   })
