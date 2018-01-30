@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ES6 DEMO</title>
+  <style>
+    .log{
+      padding:10px 20px;
+      background:lightgrey;
+      color:#666;
+    }
+  </style>
+</head>
+<body>
+<h2>ES6 demo演示</h2>
+<div id="log" class="log"></div>
+<script >
+  var str = `
+  //var的变量提升（到第一行）
+  console.log("a: "+a);//值为undefined
+  var a = 1;
+  console.log("b: "+b);//变量未定义
+  let b = 2;
+    {
+  	let a = 1;
+  	var b = 2;
+  }
+  console.log("b: "+b);//函数内作用域
+  console.log("a: "+a);//let为{}块级作用域
+  `
+  let  a = 1;
+  a = 2;//可以
+  const b = {a:2};
+  b.a = 3;//ok
+  b.c = 5;//ok
+  //b = {c:2}//error
+
+  printLog(str);
+  function printLog(str) {
+    document.getElementById("log").innerText = str;
+  }
+</script>
+</body>
+</html>
