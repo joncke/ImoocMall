@@ -27,17 +27,47 @@
   }
   console.log("b: "+b);//函数内作用域
   console.log("a: "+a);//let为{}块级作用域
-  `
+
   let  a = 1;
   a = 2;//可以
   const b = {a:2};
   b.a = 3;//ok
   b.c = 5;//ok
-  //b = {c:2}//error
+  b = {c:2}//error
 
+  let userName = 'jack';
+  printLog(\`I'm \${userName}.\`);
+
+  //箭头函数
+  var arr = [3,6,9];
+  var newArr = arr.map(function (item) {
+    return item+2;
+  })
+  var newArr1 = arr.map((item)=>{
+  	return item+3;
+  })
+  console.log(newArr);
+  console.log(newArr1);
+  `
   printLog(str);
+  //数组的解构
+  var [a,b] = [3,8,10];
+  console.log(`a:${a},b:${b}`);
+  //字符串的解构
+  var [x,y,z] = "Vue";
+  console.log(`${x},${y},${z}`);
+  //对象{k,v}的结构
+  var {n,m} = {m:10,n:20};
+  console.log(`${n},${m}`);
+  //函数参数的结构
+  function sum([x,y]){
+  	return x+y;
+  }
+  var total = sum([2,8]);
+  console.log(`${total}`);
+
   function printLog(str) {
-    document.getElementById("log").innerText = str;
+    document.getElementById("log").innerText += str;
   }
 </script>
 </body>
