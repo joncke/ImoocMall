@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Promise</title>
+</head>
+<body>
+<script >
+  let checkLogin = function () {
+  	new Promise(function (resolve, reject) {
+      let flag = document.cookie.indexOf("userId")>-1 ? true:false;
+      if(flag=true){//暂时设为true
+      	resolve({
+          status:0,
+          result:true
+        })
+      }else{
+      		reject("reject error.")
+        }
+    })
+  };
+  checkLogin().then((res)=> {
+    if(res.status==0){
+    	console.log("login sucess.");
+    }
+  }).catch((error)=>{
+  	console.log( `error:${error}`);
+  })
+</script>
+</body>
+</html>
