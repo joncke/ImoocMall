@@ -1,19 +1,19 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import GoodList from '@/views/GoodList.vue'
-import Title from '@/views/Title'
-import Image from './../views/Image.vue'
-import Cart from '@/views/Cart'
-
+import GoodList from '@/views_old/GoodList.vue'
+import Title from '@/views_old/Title'
+import Image from '../views_old/Image.vue'
+import Cart from '@/views_old/Cart'
+import HelloWorld from './../components/HelloWorld'
 Vue.use(Router);
 
 export default new Router({
   // mode:"hash",
   routes: [
     {
-      path: '/goods',
+      path: '/',
       name: 'GoodList',
-      component: GoodList
+      //component: GoodList
       // children:[
       //   {
       //     path:'title',
@@ -26,6 +26,11 @@ export default new Router({
       //     component:Image
       //   }
       // ]
+      components:{
+        default:GoodList,
+        title:Title,
+        image:Image
+      }
     },
     {
       path:'/cart/:cartId',

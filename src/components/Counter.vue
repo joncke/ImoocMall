@@ -22,6 +22,7 @@
           increment(){
 //              this.num++;
             this.$emit('incre');
+            import('./../util.js');
           },
           decrement(){
 //              this.num--;
