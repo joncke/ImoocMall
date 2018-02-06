@@ -1,0 +1,30 @@
+{
+  "status":"0",
+  "msg":"",
+  "result":[
+    {
+      "productId":"100001",
+      "productName":"网监商品",
+      "productPrice":199,
+      "productImg":"8.jpg"
+    },
+    {
+      "productId":"100002",
+      "productName":"网监商品",
+      "productPrice":299,
+      "productImg":"8.jpg"
+    },
+    {
+      "productId":"100003",
+      "productName":"网监商品",
+      "productPrice":399,
+      "productImg":"8.jpg"
+    },
+    {
+      "productId":"100004",
+      "productName":"网监商品",
+      "productPrice":499,
+      "productImg":"8.jpg"
+    }
+  ]
+}
