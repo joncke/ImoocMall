@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+
 // import GoodList from '@/views_old/GoodList.vue'
 // import Title from '@/views_old/Title'
 // import Image from '../views_old/Image.vue'
