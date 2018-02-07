@@ -82,11 +82,11 @@
       this.getGoodsList();
     },
     methods:{
-      getGoodList(){
-      	axios.get("/goods/list").then((result)=>{
-      		var res = result;
-      		this.goodsList = res.result;
-      		console.log("goodsList:"+res.result);
+      getGoodsList(){
+      	axios.get("/goods/list").then((res)=>{
+//      		var res = result;
+      		this.goodsList = res.data.result;
+//      		console.log("goodsList:"+res.result);
         })
       }
     }
