@@ -83,9 +83,10 @@
     },
     methods:{
       getGoodList(){
-      	axios.get("/goods").then((result)=>{
-      		var res = result.data;
+      	axios.get("/goods/list").then((result)=>{
+      		var res = result;
       		this.goodsList = res.result;
+      		console.log("goodsList:"+res.result);
         })
       }
     }
