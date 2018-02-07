@@ -3,6 +3,11 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import VueLazyLoad from 'vue-lazyload'
+
+Vue.use(VueLazyLoad,{
+  loading:"/static/loading-svg/loading-bars.svg"
+})
 
 // import {sum,minus} from './util.js'
 // console.log(`sum:${sum(1,6)}`);
