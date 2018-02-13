@@ -29,4 +29,4 @@ switched to db admin
 > db.addUser('username','password')
 2.远程连接
 
-命令： mongo 134.567.345.23:27017/admin -uusername -p
+命令： mongo 134.567.345.23:27017/admin -u username -p

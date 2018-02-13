@@ -3,8 +3,8 @@
 mongod -f /mongo/etc/mongo.conf
 #2选库
 use admin
-#3创建账户
-db.createUser({user:"admin",pwd:"321666",roles:["root"]}）
+#3创建admin账户
+db.createUser({user:"admin",pwd:"321666",roles:[{role:"root",db:"admin"}]}）
 #4认证
 db.auth("admin","321666")
 
