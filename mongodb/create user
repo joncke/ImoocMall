@@ -1,0 +1,18 @@
+#创建admin账户
+#1.非授权登陆
+mongod -f /mongo/etc/mongo.conf
+#2选库
+use admin
+#3创建账户
+db.createUser({user:"admin",pwd:"321666",roles:["root"]}）
+#4认证
+db.auth("admin","321666")
+
+#创建其他账户
+use test
+db.createUser({user:“root",pwd:"123111",role:[{role:'dbOwner',db:'test'}]})
+
+#最后授权方式启动
+mongod -f /mongo/etc/mongo.conf --auth
+
+实例：dumall
